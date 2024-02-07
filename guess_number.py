@@ -2,12 +2,18 @@ number = 10
 
 print("I'm thinking of a number...")
 guess = input("What number am I thinking of? ")
-
+limit = 5
 while guess != str(number):
-   if guess == 'q' or guess == 'Q':
+   if limit < 2:
+      print(f'You ran out of tires. The correct answer is {number}')
+      break
+   elif guess == 'q' or guess == 'Q':
       print(f'the correct number is {number}. Goodbye')
       break
    else:
-      guess = input("Nope. Please try again: ")
+      limit-=1
+      guess = input(f'Nope, you have {limit} tries left: ')
 
-print("Congratulations! You guessed the right number.")
+
+if int(guess) == number:
+   print("Congratulations! You guessed the right number.")
