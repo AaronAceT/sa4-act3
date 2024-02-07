@@ -7,7 +7,11 @@ while guess != str(number):
    if guess == 'q' or guess == 'Q':
       print(f'the correct number is {number}. Goodbye')
       break
+   elif int(guess) > number:
+      guess = input('Your answer was too high. Try again: ')
+   elif int(guess) < number:
+      guess= input('Your answer was too low. Try again: ')
    else:
       guess = input("Nope. Please try again: ")
-
-print("Congratulations! You guessed the right number.")
+if guess == number:
+   print("Congratulations! You guessed the right number.")
