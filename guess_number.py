@@ -10,10 +10,14 @@ while guess != str(number):
    elif guess == 'q' or guess == 'Q':
       print(f'the correct number is {number}. Goodbye')
       break
-   else:
+   elif int(guess) > number:
       limit-=1
-      guess = input(f'Nope, you have {limit} tries left: ')
+      guess = input('Your answer was too high. Try again: ')
+   elif int(guess) < number:
+      limit-=1
+      guess= input(f'Your answer was too low. You have {limit} Try again: ')
+  
 
 
-if int(guess) == number:
+if guess == number:
    print("Congratulations! You guessed the right number.")
